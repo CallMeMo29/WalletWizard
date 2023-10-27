@@ -1,7 +1,4 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-
-console.log(process.env.MONGO_URI);
+import mongoose from "mongoose";
 
 const connectDB = async () => {
     try {
