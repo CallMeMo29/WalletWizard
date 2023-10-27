@@ -17,7 +17,7 @@ export const getSingleEingabe = asyncHandler(async (req, res, next) => {
 });
 
 export const createEingabe = asyncHandler(async (req, res, next) => {
-    const { body, uid } = req;
+    const { body } = req;
   
     const newEingabe = await Eingabe.create({ ...body});
     const populatedEingabe = await Eingabe.findById(newEingabe._id);
@@ -27,17 +27,14 @@ export const createEingabe = asyncHandler(async (req, res, next) => {
   export const updateEingabe = asyncHandler(async (req, res, next) => {
     const {
       body,
-      params: { id },
-      uid,
+      params: { id }
     } = req;
   
     const found = await Eingabe.findById(id);
   
     if (!found) throw new ErrorResponse(`Post ${id} doesn't exist`, 404);
-    if (uid !== found.author.toString())
-      throw new ErrorResponse('You have no permission to update this post', 401);
   
-    const updatedPost = await Post.findByIdAndUpdate(id, body, {
+    const updatedPost = await Eingabe.findByIdAndUpdate(id, body, {
       new: true,
     });
     res.json(updatedPost);
@@ -46,16 +43,12 @@ export const createEingabe = asyncHandler(async (req, res, next) => {
   export const deleteEingabe = asyncHandler(async (req, res, next) => {
     const {
       body,
-      params: { id },
-      uid,
+      params: { id }
     } = req;
   
     const found = await Eingabe.findById(id);
   
     if (!found) throw new ErrorResponse(`Post ${id} doesn't exist`, 404);
-    if (uid !== found.author.toString())
-      throw new ErrorResponse('You have no permission to delete this post', 401);
-  
     const deletedEingabe = await Eingabe.findByIdAndDelete(id, body, {
       new: true,
     });

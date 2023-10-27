@@ -14,7 +14,7 @@ app.use(express.json()); // Parse incomming requests with JSON payloads
 app.get('/', (req, res, next) => {
   res.send('Hello WW!');
 });
-app.use('/Eingabe', eingabeRouter); // Example
+app.use('/eingabe', eingabeRouter); // Example
 
 // Error Handler
 app.use(errorHandler);
