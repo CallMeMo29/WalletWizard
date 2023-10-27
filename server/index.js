@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import errorHandler from './middlewares/errorHandler.js';
 import './db/server.js';
+import eingabeRouter from './routes/eingabeRouter.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -13,7 +14,7 @@ app.use(express.json()); // Parse incomming requests with JSON payloads
 app.get('/', (req, res, next) => {
   res.send('Hello WW!');
 });
-// app.use('/posts', postsRouter); // Example
+app.use('/Eingabe', eingabeRouter); // Example
 
 // Error Handler
 app.use(errorHandler);
