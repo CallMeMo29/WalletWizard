@@ -1,6 +1,5 @@
-'use strict';
 
-class Gesamtbilanz {
+export default class Gesamtbilanz {
 
     constructor() {
         this._einnahmen = 0;
@@ -14,7 +13,7 @@ class Gesamtbilanz {
         this._ausgaben = 0;
         this._bilanz = 0;
         eintraege.forEach(eintrag => {
-            switch (eintrag.typ()){
+            switch (eintrag.typ()) {
                 case "einnahme":
                     this._einnahmen = this._einnahmen + eintrag.betrag();
                     this._bilanz = this._bilanz + eintrag.betrag();
@@ -36,6 +35,7 @@ class Gesamtbilanz {
 
         let gesamtbilanz = document.createElement("aside");
         gesamtbilanz.setAttribute("id", "gesamtbilanz");
+
         let ueberschrift = document.createElement("h1");
         ueberschrift.textContent = "Gesamtbilanz";
         gesamtbilanz.insertAdjacentElement("afterbegin", ueberschrift);
@@ -76,7 +76,7 @@ class Gesamtbilanz {
 
     anzeigen() {
         let gesamtbilanz = document.querySelector("#gesamtbilanz");
-        if(gesamtbilanz !== null) {
+        if (gesamtbilanz !== null) {
             gesamtbilanz.remove();
         }
         document.querySelector("body").insertAdjacentElement("beforeend", this._html);

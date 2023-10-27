@@ -1,10 +1,5 @@
-"use strict";
-
-let navigationsleiste = new Navigationsleiste();
-navigationsleiste.anzeigen();
-
-let eingabeformular = new Eingabeformular();
-eingabeformular.anzeigen();
+import Haushaltsbuch from './classes/Haushaltsbuch.js';
 
 let haushaltsbuch = new Haushaltsbuch();
-haushaltsbuch.anzeigen();
+haushaltsbuch.start();
+export default haushaltsbuch;

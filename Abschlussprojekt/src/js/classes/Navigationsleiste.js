@@ -1,32 +1,34 @@
-'use strict';
 
-{/* <nav id="navigationsleiste">
-<a href="index.html"><span id="markenname">Liqui-Planner</span></a>
-</nav> */}
+export default class Navigationsleiste {
 
-class Navigationsleiste {
     constructor() {
         this._html = this._html_generieren();
     }
+
     _html_generieren() {
-        let navigationsleiste = document.createElement('nav');
-        navigationsleiste.setAttribute('id', 'navigationsleiste');
+        let navigationsleiste = document.createElement("nav");
+        navigationsleiste.setAttribute("id", "navigationsleiste");
+        navigationsleiste.setAttribute('class', 'schattenmitfarbverlauf');
 
-        let anker = document.createElement('a');
-        anker.setAttribute('href', '#');
+        let anker = document.createElement("a");
+        anker.setAttribute("href", "#");
 
-        let span = document.createElement('span');
-        span.setAttribute('id', 'markenname');
-        span.textContent = 'Wallet-Wizard';
-        anker.insertAdjacentElement('afterbegin', span);
+        let span = document.createElement("span");
+        span.setAttribute("id", "markenname");
+        span.textContent = "Wallet-Wizard";
+        anker.insertAdjacentElement("afterbegin", span);
 
-        navigationsleiste.insertAdjacentElement('afterbegin', anker);
+        navigationsleiste.insertAdjacentElement("afterbegin", anker);
+
         return navigationsleiste;
     }
+
     anzeigen() {
-        let body = document.querySelector('body');
-        if(body !== null) {
-            body.insertAdjacentElement('afterbegin', this._html);
+        let body = document.querySelector("body");
+        if (body !== null) {
+            body.insertAdjacentElement("afterbegin", this._html);
         }
     }
+
+    
 }

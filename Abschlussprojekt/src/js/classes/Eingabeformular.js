@@ -1,6 +1,7 @@
-'use strict';
+import Fehler from "./Fehler.js";
+import haushaltsbuch from "../main.js";
 
-class Eingabeformular {
+export default class Eingabeformular {
 
     constructor() {
         this._html = this._html_generieren();
@@ -15,10 +16,10 @@ class Eingabeformular {
         }
     }
 
-    _formulardaten_verarbeiten(formulardaten) {  
+    _formulardaten_verarbeiten(formulardaten) {
         return {
             titel: formulardaten.titel.trim(),
-            typ: formulardaten.einnahme === false ? 'ausgabe' : 'einnahme',
+            typ: formulardaten.einnahme === false ? "ausgabe" : "einnahme",
             betrag: parseFloat(formulardaten.betrag) * 100,
             datum: formulardaten.datum
         }
@@ -59,9 +60,9 @@ class Eingabeformular {
                 e.target.reset();
                 this._datum_aktualisieren();
             } else {
-                let fehler = new Fehler('Folgende Felder wurden nicht korrekt ausgefüllt:', formular_fehler);
-                fehler.anzeige();
-            }                
+                let fehler = new Fehler("Folgende Felder wurden nicht korrekt ausgefüllt:", formular_fehler);
+                fehler.anzeigen();
+            }   
         });
     }
 
@@ -69,6 +70,9 @@ class Eingabeformular {
         let eingabeformular = document.createElement("section");
         eingabeformular.setAttribute("id", "eingabeformular-container");
         eingabeformular.innerHTML = `<form id="eingabeformular" action="#" method="get"></form>
+        
+        <p>@MoCa mit Schuss!</p>
+        
         <div class="eingabeformular-zeile">
             <h1>Neue Einnahme / Ausgabe hinzufügen</h1>
         </div>
@@ -95,15 +99,14 @@ class Eingabeformular {
         </div>`;
 
         this._absenden_event_hinzufuegen(eingabeformular);
-
         return eingabeformular;
     }
 
     anzeigen() {
         let navigationsleiste = document.querySelector("body");
-        if(navigationsleiste !== null){
-            navigationsleiste.insertAdjacentElement('afterbegin', this._html);
+        if (navigationsleiste !== null) {
+            navigationsleiste.insertAdjacentElement("afterbegin", this._html);
             this._datum_aktualisieren();
-        }
-    }
+        }      
+    }    
 }
