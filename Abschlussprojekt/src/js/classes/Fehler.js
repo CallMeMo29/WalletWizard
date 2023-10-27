@@ -1,10 +1,10 @@
-'use strict';
 
-class Fehler {
+export default class Fehler {
+
     constructor(fehlertext, formular_fehler) {
         this._fehlertext = fehlertext;
         this._formular_fehler = formular_fehler;
-        this._html = this._html_generieren(); 
+        this._html = this._html_generieren();
     }
 
     _html_generieren() {
@@ -33,11 +33,13 @@ class Fehler {
         }
     }
 
-    anzeige() {
+    anzeigen() {
         this._entfernen();
         let eingabeformular_container = document.querySelector("#eingabeformular-container");
         if (eingabeformular_container !== null) {
             eingabeformular_container.insertAdjacentElement("afterbegin", this._html);
         }
     }
+
+    
 }

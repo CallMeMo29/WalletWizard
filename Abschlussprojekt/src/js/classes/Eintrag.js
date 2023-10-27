@@ -1,6 +1,6 @@
-'use strict';
+import haushaltsbuch from "../main.js";
 
-class Eintrag {
+export default class Eintrag {
 
     constructor(titel, betrag, typ, datum) {
         this._titel = titel;
@@ -35,7 +35,8 @@ class Eintrag {
         return this._html;
     }
 
-    _html_generieren(eintrag) {
+    _html_generieren() {
+
         let listenpunkt = document.createElement("li");
         this._typ === "einnahme" ? listenpunkt.setAttribute("class", "einnahme") : listenpunkt.setAttribute("class", "ausgabe");
         listenpunkt.setAttribute("data-timestamp", this._timestamp);
@@ -66,6 +67,7 @@ class Eintrag {
         let icon = document.createElement("i");
         icon.setAttribute("class", "fas fa-trash");
         button.insertAdjacentElement("afterbegin", icon);
+
         this._eintrag_entfernen_event_hinzufuegen(listenpunkt);
 
         return listenpunkt;
@@ -76,5 +78,5 @@ class Eintrag {
             let timestamp = e.target.parentElement.getAttribute("data-timestamp");
             haushaltsbuch.eintrag_entfernen(timestamp);
         });
-    }
+    }    
 }
