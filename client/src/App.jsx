@@ -1,4 +1,4 @@
-import '../src/index.css';
+import '../components/AlfisCss.css';
 import Navbar from '../components/Navbar';
 
 function App() {
