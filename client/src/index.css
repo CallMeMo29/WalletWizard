@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navigationsleiste {
+  width: 95%;
+  height: auto;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-size: xx-large;  
+  background-color: #343a40;
+}
+
+#markenname {
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Amatic SC", cursive;
+  line-height: inherit;
+  vertical-align: bottom;
+}
+
+#markenname>[class*="fa-"] {
+  font-size: 4rem;
+  vertical-align: baseline;
+  margin-right: 1rem;
+}
