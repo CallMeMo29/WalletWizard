@@ -1,5 +1,6 @@
-import '../components/AlfisCss.css';
+// import '../components/AlfisCss.css';
 import Navbar from '../components/Navbar';
+import Eingabeformular from '../components/Eingabeformular';
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <div>
         <Navbar></Navbar>
+        <Eingabeformular></Eingabeformular>
       </div>
 
     </>
