@@ -4,7 +4,7 @@ import MenuListe from './DropDown';
 export default function Navbar() {
   return (
 
-    <div id="navigationsleiste" className="container text-center">
+    <div id="navigationsleiste" className="text-center">
       <div className="row">
         <div className="col">
           
