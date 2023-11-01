@@ -125,8 +125,7 @@ transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shado
 }
 
 .titel-typ-eingabe-gruppe>input {
-border-right: none;
-border-left: none;
+border: none;
 }
 
 .titel-typ-eingabe-gruppe>label:nth-of-type(2) {
@@ -170,8 +169,11 @@ cursor: pointer;
 }
 
 .betrag-datum-eingabe-gruppe>input:nth-of-type(1) {
-border-right: none;
-border-left: none;
+border: none;
+}
+
+#datum {
+  border: none;
 }
 
 .betrag-datum-eingabe-gruppe>label:nth-of-type(2) {
