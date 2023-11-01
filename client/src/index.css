@@ -12,7 +12,7 @@ li {
 
 a {
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
   color: #ffffff;
 }
 
@@ -21,7 +21,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 #markenname {
@@ -36,7 +35,7 @@ a {
   margin-left: auto;
   margin-right: auto;  
   width: 97%;
-  height: auto;
+  height: 10em;
   margin-top: 5%;
   margin-bottom: 2%;   
   background-image: linear-gradient(0deg, #2f272f 0%, #3f4e50 50%, #73787a 100%);
@@ -44,7 +43,7 @@ a {
 
 #eingabeformular-container {
   width: 90.5%;
-  height: 12em;
+  height: 15em;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2%;
@@ -126,6 +125,7 @@ transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shado
 
 .titel-typ-eingabe-gruppe>input {
 border: none;
+cursor: pointer;
 }
 
 .titel-typ-eingabe-gruppe>label:nth-of-type(2) {
@@ -144,6 +144,7 @@ background-color: #f8d7da;
 color: #dc3545;
 border-color: #f5c6cb;
 border-left: none;
+cursor: pointer;
 }
 
 .titel-typ-eingabe-gruppe>input[type=radio] {
@@ -170,6 +171,7 @@ cursor: pointer;
 
 .betrag-datum-eingabe-gruppe>input:nth-of-type(1) {
 border: none;
+cursor: pointer;
 }
 
 #datum {
