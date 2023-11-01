@@ -8,10 +8,12 @@ const EingabeList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // fetching data from backend
       try {
         const response = await axios.get(
           "https://wallet-wizzard-backend.onrender.com/eingabe"
         );
+        // data wird gleich backend data gesetzt
         setData(response.data);
         setLoading(false);
         console.log(response.data);
@@ -22,6 +24,7 @@ const EingabeList = () => {
     };
 
     fetchData();
+    //] stellt sicher, dass die Funktion nur einmal nach dem ersten Rendern ausgeführt wird.
   }, []);
 
   if (loading) return <p>Loading...</p>;
