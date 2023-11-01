@@ -9,10 +9,19 @@ function App() {
   return (
     <>
       <div>
+
+        <div>
+          <Navbar></Navbar>
+        </div>
+        
+//         <Eingabeformular></Eingabeformular>
+        <Footer></Footer>
+
         <Navbar />
       
         <MoPost />
         <EingabeList />
+
       </div>
     </>
   );
