@@ -1,13 +1,17 @@
-import "../components/AlfisCss.css";
+//import "../components/AlfisCss.css";
 import Navbar from "../components/Navbar";
 import Eingabeformular from "../components/Eingabeformular";
+import MoPost from "../components/MoPost";
+import EingabeList from "../components/Mofetch";
 
 function App() {
   return (
     <>
       <div>
-        <Navbar></Navbar>
-        <Eingabeformular></Eingabeformular>
+        <Navbar />
+        {/* <Eingabeformular></Eingabeformular> */}
+        <MoPost />
+        <EingabeList />
       </div>
     </>
   );
