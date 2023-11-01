@@ -1,19 +1,21 @@
-// import '../components/AlfisCss.css';
-import Navbar from '../components/Navbar';
-import Eingabeformular from '../components/Eingabeformular';
-// import Gesamtbilanz from '../components/Gesamtbilanz';
+
+//import "../components/AlfisCss.css";
+import Navbar from "../components/Navbar";
+import Eingabeformular from "../components/Eingabeformular";
+import MoPost from "../components/MoPost";
+import EingabeList from "../components/Mofetch";
 
 function App() {
-
   return (
     <>
       <div>
-        <Navbar></Navbar>
-        <Eingabeformular></Eingabeformular>
+        <Navbar />
+      
+        <MoPost />
+        <EingabeList />
       </div>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
