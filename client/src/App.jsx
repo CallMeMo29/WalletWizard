@@ -1,3 +1,4 @@
+
 //import "../components/AlfisCss.css";
 import Navbar from "../components/Navbar";
 import Eingabeformular from "../components/Eingabeformular";
@@ -9,7 +10,7 @@ function App() {
     <>
       <div>
         <Navbar />
-        {/* <Eingabeformular></Eingabeformular> */}
+      
         <MoPost />
         <EingabeList />
       </div>
