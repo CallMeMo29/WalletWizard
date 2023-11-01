@@ -41,7 +41,7 @@ const MoPost = () => {
           <h1>Neue Einnahme / Ausgabe hinzufügen</h1>
         </div>
         <div className="eingabe-zeile">
-          <div className="titel-typ-eingabe">
+          <div className="titel-typ-eingabe-gruppe">
             <label htmlFor="title">Title:</label>
             <input
               type="text"
