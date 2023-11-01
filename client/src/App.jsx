@@ -8,15 +8,10 @@ function App() {
   return (
     <>
       <div>
-        {/* <div>
-        <Navbar />
-        </div> */}
-
-        {/* <Eingabeformular></Eingabeformular> */}
         <Navbar />
         <MoPost />
         <EingabeList />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

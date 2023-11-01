@@ -37,34 +37,38 @@ const MoPost = () => {
     <section id="eingabeformular-container">
       {/* handleSubmit function is a wrapper for react-hook-form to manage your data inputs, validation, errors, etc.. before calling your own sendData function. */}
       <form id="eingabeformular" onSubmit={handleSubmit}>
-        <div className="eingabe-zeile">
+        <div className="eingabeformular-zeile">
           <h1>Neue Einnahme / Ausgabe hinzufügen</h1>
         </div>
-        <div className="eingabe-zeile">
+        <div className="eingabeformular-zeile">
           <div className="titel-typ-eingabe-gruppe">
             <label htmlFor="title">Title:</label>
             <input
+              name="titel"
+              form="eingabeformular"
               type="text"
               id="titel"
               value={titel}
               onChange={(e) => setTitel(e.target.value)}
               placeholder="z.B. Einkaufen"
               size={10}
-              title={"Titel des Eintrags"}
+              title="Titel des Eintrags"
             />
             <input
+              form="eingabeformular"
               type="radio"
-              id="einahme"
+              id="einnahme"
               name="typ"
               value="einnahme"
               checked={typ === "einnahme"}
               onChange={(e) => setTyp(e.target.value)}
               title={"Typ des Eintrags"}
             />
-            <label htmlFor="einnahme" title={"Typ des Eintrags"}>
+            <label htmlFor="einnahme" title="Typ des Eintrags">
               Einnahme
             </label>
             <input
+              form="eingabeformular"
               type="radio"
               id="ausgabe"
               name="typ"
@@ -72,16 +76,18 @@ const MoPost = () => {
               checked={typ === "ausgabe"}
               onChange={(e) => setTyp(e.target.value)}
               title="Typ des Eintrags"
+              defaultChecked
             />
             <label htmlFor="ausgabe" title="Typ des Eintrags">
               Ausgabe
             </label>
           </div>
         </div>
-        <div className="eingabe-zeile">
-          <div className="betrag-datum-eingabe">
+        <div className="eingabeformular-zeile">
+          <div className="betrag-datum-eingabe-gruppe">
             <label htmlFor="betrag">Betrag:</label>
             <input
+              form="eingabeformular"
               type="number"
               id="betrag"
               name="betrag"
@@ -94,6 +100,7 @@ const MoPost = () => {
             />
             <label htmlFor="datum">Datum:</label>
             <input
+              form="eingabeformular"
               type="date"
               id="datum"
               name="datum"
@@ -105,7 +112,7 @@ const MoPost = () => {
             />
           </div>
         </div>
-        <div className="eingabe-zeile">
+        <div className="eingabeformular-zeile">
           <button className="standard" type="submit" form="eingabeformular">
             Hinzufügen
           </button>
