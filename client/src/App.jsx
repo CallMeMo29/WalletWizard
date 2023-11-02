@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "../components/Navbar";
 import MoPost from "../components/MoPost";
-import EingabeList from "../components/Mofetch";
+import EingabeList from "../components/EingabeList";
 import Footer from "../components/Footer";
 
 
