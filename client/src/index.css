@@ -215,6 +215,149 @@ box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, .5);
 z-index: 1;
 }
 
+#monatslisten {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: monatslisten-bereich;
+}
+
+.monatsliste {
+  margin: 1rem 3rem 0;
+  border-bottom: .1rem solid #ced4da;
+}
+
+.monatsliste>h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.monatsliste>h2>.monat-jahr {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.monatsliste>h2>.monatsbilanz {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  font-size: 1.8rem;
+  padding: .5rem 1rem;
+  color: #fff;
+  border-radius: 0.2rem;
+}
+
+.monatsliste>h2>.monatsbilanz.positiv {
+  background-color: #28a745;
+}
+
+.monatsliste>h2>.monatsbilanz.negativ {
+  background-color: #dc3545;
+}
+
+.monatsliste>ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 4rem;
+}
+
+.monatsliste>ul>li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1.5rem;
+  margin: 0.2rem 0;
+}
+
+.monatsliste>ul>li>.datum {
+  padding: .5rem 1.8rem .5rem 2rem;
+  border-top: .1rem solid #ced4da;
+  border-right: none;
+  border-bottom: .1rem solid #ced4da;
+  border-left: .1rem solid #ced4da;
+  border-bottom-left-radius: 0.2rem;
+  border-top-left-radius: 0.2rem;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  background-color: #ecedee;
+  color: #495057;
+  width: 12rem;
+  text-align: center;
+}
+
+.monatsliste>ul>li>.titel {
+  padding: .5rem 2rem;
+  border-top: .1rem solid #ced4da;
+  border-right: none;
+  border-bottom: .1rem solid #ced4da;
+  border-left: none;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.titel2 {
+  text-align: end;
+}
+
+.monatsliste>ul>li>.betrag {
+  padding: .5rem 2rem;
+  border-top: .1rem solid #ced4da;
+  border-right: none;
+  border-bottom: .1rem solid #ced4da;
+  border-left: none;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+.entfernen-button {
+  color: #000000;
+  width: 4.5rem;
+  background-color: #f79b9b;
+  padding: .5rem 1rem;
+  border-top: .1rem solid #ced4da;
+  border-right: .1rem solid #ced4da;
+  border-bottom: .1rem solid #ced4da;
+  border-left: none;
+  border-bottom-right-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+.entfernen-button>* {
+  pointer-events: none;
+}
+
+.entfernen-button:focus {
+  border-color: #ff809c;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 .2rem rgba(255, 0, 140, 0.25);
+  box-shadow: 0 0 0 .2rem rgba(255, 0, 162, 0.25);
+  z-index: 1;
+}
+
+.monatsliste>ul>li.ausgabe>.titel,
+.monatsliste>ul>li.ausgabe>.betrag {
+  background-color: #f8d7da;
+  color: #dc3545;
+  border-color: #f5c6cb;
+}
+
+.monatsliste>ul>li.einnahme>.titel,
+.monatsliste>ul>li.einnahme>.betrag {
+  background-color: #d4edda;
+  color: #28a745;
+  border-color: #c3e6cb;
+}
+
 #footer1 {  
   box-shadow: #c0c1c1 2px 2px;
   border-radius: 2px;  

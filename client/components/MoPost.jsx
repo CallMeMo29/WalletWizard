@@ -28,7 +28,7 @@ const MoPost = () => {
       //   alert("Eingabe gesendet");
 
       Swal.fire({
-        position: "top-end",
+        position: "center",
         icon: "success",
         title: "Your work has been saved",
         showConfirmButton: false,
@@ -38,8 +38,13 @@ const MoPost = () => {
         window.location.reload();
       }, 1500);
     } catch (error) {
-      console.error("Error sending data:", error);
-      alert("Something went wrong!");
+      Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: `Eine eingabe fehlt!`,
+        showConfirmButton: false,
+        timer: 2000,
+      });
     }
   };
   //Eingabeformular
