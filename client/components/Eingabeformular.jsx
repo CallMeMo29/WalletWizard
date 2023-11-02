@@ -32,7 +32,7 @@ const Eingabeformular = () => {
                             step= '0.01'
                             title= 'Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)'/> 
                         <label htmlFor='datum'>Datum</label>
-                        <input type='date' id='datum' name='datum' form='eingabeformular' placeholder="jjjj-mm-tt" size={10} title={"Datum des Eintrags (Format: jjjj-mm-tt)"} />
+                        <input type='date' id='datum' name='datum' form='eingabeformular' placeholder="tt.mm.jjjj" size={10} title={"Datum des Eintrags (Format: tt.mm.jjjj)"} />
                     </div>
                 </div> 
                 <div className="eingabeformular-zeile">
