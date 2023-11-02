@@ -6,6 +6,7 @@ import EingabeList from "../components/Mofetch";
 import Footer from "../components/Footer";
 
 
+
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <MoPost />
         <EingabeList />
+        {/* <Gesamtbilanz /> */}
         <Footer />
       </div>
     </>

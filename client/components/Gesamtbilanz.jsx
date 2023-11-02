@@ -1,5 +1,4 @@
 import React from 'react';
-
 class Gesamtbilanz extends React.Component {
   constructor() {
     super();
@@ -44,7 +43,7 @@ class Gesamtbilanz extends React.Component {
 
  htmlGenerieren() {       
    return (
-     <aside id="gesamtbilanz">
+     <div id="gesamtbilanz">
        <h1>Gesamtbilanz</h1>
        <div className="gesamtbilanz-zeile">
          <span>Einnahmen:</span>
@@ -60,7 +59,7 @@ class Gesamtbilanz extends React.Component {
            {(this.state.bilanz /100).toFixed(2).replace(/\./, ",")} €
          </span>
        </div>
-     </aside> 
+     </div> 
    );
  }
 
