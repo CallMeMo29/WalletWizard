@@ -17,7 +17,8 @@ const MoPost = () => {
       Betrag: betrag,
       Einzahlung: typ === "einnahme",
       Datum: datum || undefined,
-    };
+    };   
+
     //Backend verbindung + Data = Wenn Daten gesendet dann Alert
     try {
       const response = await axios.post(
@@ -26,11 +27,11 @@ const MoPost = () => {
       );
       console.log(response.data);
       //   alert("Eingabe gesendet");
-
+      
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Your work has been saved",
+        title: "Dein Eintrag wird gespeichert",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -41,12 +42,13 @@ const MoPost = () => {
       Swal.fire({
         position: "center",
         icon: "warning",
-        title: `Eine eingabe fehlt!`,
+        title: `Eine eingabe ${''} fehlt!`,
         showConfirmButton: false,
         timer: 2000,
       });
     }
   };
+   
   //Eingabeformular
   return (
     <section id="eingabeformular-container">
@@ -112,7 +114,7 @@ const MoPost = () => {
               size={10}
               step="0.01"
               title="Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)"
-            />
+            />          
             <label htmlFor="datum">Datum:</label>
             <input
               form="eingabeformular"
@@ -121,9 +123,8 @@ const MoPost = () => {
               name="datum"
               value={datum}
               onChange={(e) => setDatum(e.target.value)}
-              placeholder="jjjj-mm-tt"
               size={10}
-              title={"Datum des Eintrags (Format: jjjj-mm-tt)"}
+              title={"Datum des Eintrags (Format: tt-mm-jjjj)"}
             />
           </div>
         </div>
@@ -136,4 +137,5 @@ const MoPost = () => {
     </section>
   );
 };
+
 export default MoPost;

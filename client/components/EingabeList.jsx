@@ -39,7 +39,9 @@ const EingabeList = () => {
     <div className="getItems monatsliste">
       <h2>
         <span className="monath-jahr">August 2023</span>
-        <span className={()=>{        
+        <span className={()=>{ 
+          // Die Fariable bilanz muss noch erstellt werden und den Wert der Bilanz(Guthaben oder minus)
+          // übergeben werden das es dann die Klasse setzt die die hintergrunfarbe macht       
           if (bilanz >= 0) {
             monatsbilanz.setAttribute("class", "monatsbilanz positiv");
         } else {
@@ -49,7 +51,9 @@ const EingabeList = () => {
       <ul>
           {data.map((item) => (
             <li className={()=>{
-              WelcherButtonIstGedrück === "einnahme" ? WelcherButtonIstGedrück.setAttribute("class", "einnahme") : WelcherButtonIstGedrück.setAttribute("class", "ausgabe");
+              // Hier muss noch in "WelcherButtonIstGedrueckt" das onClick event eingefügt werden
+              // welcher Button gedrückt ist damit die Klasse bestimmt werden kann!
+              WelcherButtonIstGedrueckt === "einnahme" ? WelcherButtonIstGedrueckt.setAttribute("class", "einnahme") : WelcherButtonIstGedrueckt.setAttribute("class", "ausgabe");
             }} key={item._id}>
               <span className="titel">
                 {item.Titel || "No title"}

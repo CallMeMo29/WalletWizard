@@ -9,18 +9,18 @@ const Eingabeformular = () => {
                     <h1>Neue Einnahme / Ausgabe hinzufügen</h1>
                 </div>
                 <div className="eingabeformular-zeile">
-                <div className="titel-typ-eingabe-gruppe">
-                    <label htmlFor="titel">Titel</label>
-                    <input type="text" id="titel" form="eingabeformular" name="titel" placeholder="z.B. Einkaufen" size={10} title={"Titel des Eintrags"}/>
-                    <input type='radio' id='einnahme' name='typ' value='einnahme' form='eingabeformular' title={'Typ des Eintrags'}/>
-                    <label htmlFor='einnahme' title={'Typ des Eintrags'}>Einnahme</label>
-                    <input type='radio' id='ausgabe' name='typ' value= 'ausgabe'
-                    form='eingabeformular'
-                    title='Typ des Eintrags'
-                    defaultChecked
-                    />
-                    <label htmlFor="ausgabe" title="Typ des Eintrags">Ausgabe</label> 
-                </div> 
+                    <div className="titel-typ-eingabe-gruppe">
+                        <label htmlFor="titel">Titel</label>
+                        <input type="text" id="titel" form="eingabeformular" name="titel" placeholder="z.B. Einkaufen" size={10} title={"Titel des Eintrags"}/>
+                        <input type='radio' id='einnahme' name='typ' value='einnahme' form='eingabeformular' title={'Typ des Eintrags'}/>
+                        <label htmlFor='einnahme' title={'Typ des Eintrags'}>Einnahme</label>
+                        <input type='radio' id='ausgabe' name='typ' value= 'ausgabe'
+                        form='eingabeformular'
+                        title='Typ des Eintrags'
+                        defaultChecked
+                        />
+                        <label htmlFor="ausgabe" title="Typ des Eintrags">Ausgabe</label> 
+                    </div> 
                 </div> 
                 <div className="eingabeformular-zeile">
                     <div className="betrag-datum-eingabe-gruppe">
@@ -32,7 +32,7 @@ const Eingabeformular = () => {
                             step= '0.01'
                             title= 'Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)'/> 
                         <label htmlFor='datum'>Datum</label>
-                        <input type='date' id='datum' name='datum' form='eingabeformular' placeholder="tt.mm.jjjj" size={10} title={"Datum des Eintrags (Format: tt.mm.jjjj)"} />
+                        <input type='date' id='datum' name='datum' form='eingabeformular' size={10} title="Datum des Eintrags (Format: tt.mm.jjjj)" />
                     </div>
                 </div> 
                 <div className="eingabeformular-zeile">
