@@ -10,11 +10,12 @@ const EingabeList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // fetching data from backend
+      // Fetching data from backend
       try {
         const response = await axios.get(
           "https://wallet-wizzard-backend.onrender.com/eingabe"
         );
+<<<<<<< HEAD
 // Sort the data by the "Datum" field in descending order (new to old)
       const sortedData = response.data.sort(
         (a, b) => new Date(b.Datum).getTime() - new Date(a.Datum).getTime()
@@ -22,6 +23,16 @@ const EingabeList = () => {
 
       setData(sortedData);
       setLoading(false);
+=======
+
+        // Sort the data by the "Datum" field in descending order (new to old)
+        const sortedData = response.data.sort(
+          (a, b) => new Date(b.Datum).getTime() - new Date(a.Datum).getTime()
+        );
+
+        setData(sortedData);
+        setLoading(false);
+>>>>>>> e42f0e69137883d26536bbeedd5c6d5a1c189f89
       } catch (err) {
       setError(err.message);
       setLoading(false);
@@ -29,7 +40,6 @@ const EingabeList = () => {
     };
 
     fetchData();
-    //] stellt sicher, dass die Funktion nur einmal nach dem ersten Rendern ausgeführt wird.
   }, []);
 
   if (loading) return <p>Loading...</p>;
