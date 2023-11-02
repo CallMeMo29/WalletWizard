@@ -230,7 +230,6 @@ button.standard:focus {
   z-index: 1;
 }
 
-<<<<<<< HEAD
 #monatslisten {
   -ms-grid-row: 5;
   -ms-grid-column: 3;
@@ -375,9 +374,6 @@ button.standard:focus {
 }
 
 #footer1 {  
-=======
-#footer1 {
->>>>>>> e42f0e69137883d26536bbeedd5c6d5a1c189f89
   box-shadow: #c0c1c1 2px 2px;
   border-radius: 2px;
   padding-bottom: 1%;
