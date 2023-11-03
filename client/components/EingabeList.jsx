@@ -70,7 +70,11 @@ const EingabeList = () => {
                 ? `${item.Betrag.$numberDecimal} €`
                 : ""}
             </span>
-            <span className="titel titel2">
+            <span
+              className={`titel titel2 ${
+                item.Einzahlung ? "einnahme" : "ausgabe"
+              }`}
+            >
               {item.Einzahlung !== undefined
                 ? item.Einzahlung
                   ? "Einnahme"
