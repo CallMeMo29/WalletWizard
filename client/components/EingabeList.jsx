@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 const EingabeList = () => {
   const [data, setData] = useState([]);
@@ -21,7 +20,7 @@ const EingabeList = () => {
 
         setData(sortedData);
         setLoading(false);
-        console.log(sortedData);
+        // console.log(sortedData);
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -31,7 +30,6 @@ const EingabeList = () => {
     fetchData();
   }, []);
 
-  // Initialize Einnahmen and Ausgaben totals
   let einnahmenTotal = 0;
   let ausgabenTotal = 0;
 
@@ -46,6 +44,18 @@ const EingabeList = () => {
   });
 
   const bilanz = einnahmenTotal - ausgabenTotal;
+
+  const removeBetrag = async (id) => {
+    try {
+      await axios.delete(
+        `https://wallet-wizzard-backend.onrender.com/eingabe/${id}`
+      );
+
+      setData(data.filter((item) => item._id !== id));
+    } catch (err) {
+      console.error("Error removing the item: ", err);
+    }
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -71,7 +81,11 @@ const EingabeList = () => {
                 ? `${item.Betrag.$numberDecimal} €`
                 : ""}
             </span>
-            <span className="titel titel2">
+            <span
+              className={`titel titel2 ${
+                item.Einzahlung ? "einnahme" : "ausgabe"
+              }`}
+            >
               {item.Einzahlung !== undefined
                 ? item.Einzahlung
                   ? "Einnahme"
@@ -81,7 +95,11 @@ const EingabeList = () => {
             <span className="datum">
               {item.Datum ? new Date(item.Datum).toLocaleDateString() : ""}
             </span>
-            <button className="entfernen-button">
+            <button
+              className="entfernen-button"
+              onClick={() => removeBetrag(item._id)}
+              aria-label="Delete item"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

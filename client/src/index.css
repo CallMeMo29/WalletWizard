@@ -238,10 +238,10 @@ button.standard:focus {
 
 .monatsliste {
   margin: 1rem 3rem 0;
-  border-bottom: .1rem solid #ced4da;
+  border-bottom: 0.1rem solid #ced4da;
 }
 
-.monatsliste>h2 {
+.monatsliste > h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,37 +250,37 @@ button.standard:focus {
   align-items: center;
 }
 
-.monatsliste>h2>.monat-jahr {
+.monatsliste > h2 > .monat-jahr {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.monatsliste>h2>.monatsbilanz {
+.monatsliste > h2 > .monatsbilanz {
   -webkit-box-flex: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
   font-size: 1.8rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: 0.2rem;
 }
 
-.monatsliste>h2>.monatsbilanz.positiv {
+.monatsliste > h2 > .monatsbilanz.positiv {
   background-color: #28a745;
 }
 
-.monatsliste>h2>.monatsbilanz.negativ {
+.monatsliste > h2 > .monatsbilanz.negativ {
   background-color: #dc3545;
 }
 
-.monatsliste>ul {
+.monatsliste > ul {
   list-style: none;
   padding: 0;
   margin-bottom: 4rem;
 }
 
-.monatsliste>ul>li {
+.monatsliste > ul > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,12 +288,12 @@ button.standard:focus {
   margin: 0.2rem 0;
 }
 
-.monatsliste>ul>li>.datum {
-  padding: .5rem 1.8rem .5rem 2rem;
-  border-top: .1rem solid #ced4da;
+.monatsliste > ul > li > .datum {
+  padding: 0.5rem 1.8rem 0.5rem 2rem;
+  border-top: 0.1rem solid #ced4da;
   border-right: none;
-  border-bottom: .1rem solid #ced4da;
-  border-left: .1rem solid #ced4da;
+  border-bottom: 0.1rem solid #ced4da;
+  border-left: 0.1rem solid #ced4da;
   border-bottom-left-radius: 0.2rem;
   border-top-left-radius: 0.2rem;
   -webkit-box-flex: 0;
@@ -305,11 +305,11 @@ button.standard:focus {
   text-align: center;
 }
 
-.monatsliste>ul>li>.titel {
-  padding: .5rem 2rem;
-  border-top: .1rem solid #ced4da;
+.monatsliste > ul > li > .titel {
+  padding: 0.5rem 2rem;
+  border-top: 0.1rem solid #ced4da;
   border-right: none;
-  border-bottom: .1rem solid #ced4da;
+  border-bottom: 0.1rem solid #ced4da;
   border-left: none;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -320,11 +320,11 @@ button.standard:focus {
   text-align: end;
 }
 
-.monatsliste>ul>li>.betrag {
-  padding: .5rem 2rem;
-  border-top: .1rem solid #ced4da;
+.monatsliste > ul > li > .betrag {
+  padding: 0.5rem 2rem;
+  border-top: 0.1rem solid #ced4da;
   border-right: none;
-  border-bottom: .1rem solid #ced4da;
+  border-bottom: 0.1rem solid #ced4da;
   border-left: none;
   -webkit-box-flex: 0;
   -ms-flex-positive: 0;
@@ -335,10 +335,10 @@ button.standard:focus {
   color: #000000;
   width: 4.5rem;
   background-color: #f79b9b;
-  padding: .5rem 1rem;
-  border-top: .1rem solid #ced4da;
-  border-right: .1rem solid #ced4da;
-  border-bottom: .1rem solid #ced4da;
+  padding: 0.5rem 1rem;
+  border-top: 0.1rem solid #ced4da;
+  border-right: 0.1rem solid #ced4da;
+  border-bottom: 0.1rem solid #ced4da;
   border-left: none;
   border-bottom-right-radius: 0.2rem;
   border-top-right-radius: 0.2rem;
@@ -347,33 +347,33 @@ button.standard:focus {
   flex-grow: 0;
 }
 
-.entfernen-button>* {
+.entfernen-button > * {
   pointer-events: none;
 }
 
 .entfernen-button:focus {
   border-color: #ff809c;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 .2rem rgba(255, 0, 140, 0.25);
-  box-shadow: 0 0 0 .2rem rgba(255, 0, 162, 0.25);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 0, 140, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 162, 0.25);
   z-index: 1;
 }
 
-.monatsliste>ul>li.ausgabe>.titel,
-.monatsliste>ul>li.ausgabe>.betrag {
+.monatsliste > ul > li.ausgabe > .titel,
+.monatsliste > ul > li.ausgabe > .betrag {
   background-color: #f8d7da;
   color: #dc3545;
   border-color: #f5c6cb;
 }
 
-.monatsliste>ul>li.einnahme>.titel,
-.monatsliste>ul>li.einnahme>.betrag {
+.monatsliste > ul > li.einnahme > .titel,
+.monatsliste > ul > li.einnahme > .betrag {
   background-color: #d4edda;
   color: #28a745;
   border-color: #c3e6cb;
 }
 
-#footer1 {  
+#footer1 {
   box-shadow: #c0c1c1 2px 2px;
   border-radius: 2px;
   padding-bottom: 1%;
@@ -391,4 +391,12 @@ button.standard:focus {
     #3f4e50 50%,
     #4f616d 100%
   );
+}
+
+.ausgabe {
+  color: red;
+}
+
+.einnahme {
+  color: green;
 }
