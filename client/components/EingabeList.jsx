@@ -63,18 +63,27 @@ const EingabeList = () => {
   return (
     <div className="getItems monatsliste">
       <h2>
-        <span className="monath-jahr">August 2023</span>
+        {/* {data.map((item)=> (
+          <span key={item._id} className="monath-jahr">
+            {new Date(item.Datum).toLocaleString("de-DE", {
+              month: "long",
+              year: "numeric"
+            })}
+          </span>
+        ))} */}
+      </h2>  
+      <h2>  
         <span
           className={
             bilanz >= 0 ? "monatsbilanz positiv" : "monatsbilanz negativ"
           }
         >
-          Bilanz z.b. {bilanz.toFixed(2)} €
+          Bilanz {bilanz.toFixed(2)} €
         </span>
       </h2>
       <ul>
         {data.map((item) => (
-          <li key={item._id}>
+          <li key={item._id} className={item.Einzahlung ? "einnahme" : "ausgabe"}>
             <span className="titel">{item.Titel || "No title"}</span>
             <span className="betrag">
               {item.Betrag && item.Betrag.$numberDecimal
