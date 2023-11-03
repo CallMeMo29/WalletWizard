@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
+import Swal from "sweetalert2";
 
 const EingabeList = () => {
   const [data, setData] = useState([]);
@@ -106,7 +107,27 @@ const EingabeList = () => {
             </span>
             <button
               className="entfernen-button"
-              onClick={() => removeBetrag(item._id)}
+              onClick={()=>{
+                Swal.fire({
+                  title: 'Willst du den Eintrag wirklich löschen?', 
+                  text: 'Du kannst dies nicht rückgängig machen!',                 
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#d33',
+                  cancelButtonColor: '#3085d6',
+                  confirmButtonText: 'Löschen!',
+                  cancelButtonText:'Abbruch!'
+                }).then((result) => {   
+                  if (result.isConfirmed) {                    
+                    removeBetrag(item._id)                                       
+                    Swal.fire(
+                      'Eintrag wurde Gelöscht!',
+                      '',
+                      'success'
+                    )
+                  }
+                })
+              }}
               aria-label="Delete item"
             >
               <svg
