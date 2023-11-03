@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 const EingabeList = () => {
   const [data, setData] = useState([]);
@@ -21,7 +20,7 @@ const EingabeList = () => {
 
         setData(sortedData);
         setLoading(false);
-        console.log(sortedData);
+        // console.log(sortedData);
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -31,7 +30,6 @@ const EingabeList = () => {
     fetchData();
   }, []);
 
-  // Initialize Einnahmen and Ausgaben totals
   let einnahmenTotal = 0;
   let ausgabenTotal = 0;
 
@@ -47,31 +45,54 @@ const EingabeList = () => {
 
   const bilanz = einnahmenTotal - ausgabenTotal;
 
+  const removeBetrag = async (id) => {
+    try {
+      await axios.delete(
+        `https://wallet-wizzard-backend.onrender.com/eingabe/${id}`
+      );
+
+      setData(data.filter((item) => item._id !== id));
+    } catch (err) {
+      console.error("Error removing the item: ", err);
+    }
+  };
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div className="getItems monatsliste">
       <h2>
-        <span className="monath-jahr">August 2023</span>
+        {/* {data.map((item)=> (
+          <span key={item._id} className="monath-jahr">
+            {new Date(item.Datum).toLocaleString("de-DE", {
+              month: "long",
+              year: "numeric"
+            })}
+          </span>
+        ))} */}
+      </h2>  
+      <h2>  
         <span
           className={
             bilanz >= 0 ? "monatsbilanz positiv" : "monatsbilanz negativ"
           }
         >
-          Bilanz z.b. {bilanz.toFixed(2)} €
+          Bilanz {bilanz.toFixed(2)} €
         </span>
       </h2>
       <ul>
         {data.map((item) => (
-          <li key={item._id}>
+          <li key={item._id} className={item.Einzahlung ? "einnahme" : "ausgabe"}>
             <span className="titel">{item.Titel || "No title"}</span>
             <span className="betrag">
               {item.Betrag && item.Betrag.$numberDecimal
                 ? `${item.Betrag.$numberDecimal} €`
                 : ""}
             </span>
-            <span className="titel titel2">
+            <span
+              className={`titel titel2`}
+            >
               {item.Einzahlung !== undefined
                 ? item.Einzahlung
                   ? "Einnahme"
@@ -81,7 +102,11 @@ const EingabeList = () => {
             <span className="datum">
               {item.Datum ? new Date(item.Datum).toLocaleDateString() : ""}
             </span>
-            <button className="entfernen-button">
+            <button
+              className="entfernen-button"
+              onClick={() => removeBetrag(item._id)}
+              aria-label="Delete item"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
