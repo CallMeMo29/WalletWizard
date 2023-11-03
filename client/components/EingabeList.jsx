@@ -91,7 +91,9 @@ const EingabeList = () => {
                 : ""}
             </span>
             <span
-              className={`titel titel2`}
+              className={`titel titel2 ${
+                item.Einzahlung ? "einnahme" : "ausgabe"
+              }`}
             >
               {item.Einzahlung !== undefined
                 ? item.Einzahlung
