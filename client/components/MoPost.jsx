@@ -17,7 +17,7 @@ const MoPost = () => {
       Betrag: betrag,
       Einzahlung: typ === "einnahme",
       Datum: datum || undefined,
-    };
+    };    
 
     //Backend verbindung + Data = Wenn Daten gesendet dann Alert
     try {

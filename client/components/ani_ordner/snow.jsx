@@ -220,9 +220,7 @@ let snowflakes = (function() {
 		}
 		
 		return w;
-	}
-
-	
+	}	
 	// get window height
 	function getWindowHeight()
 	{
