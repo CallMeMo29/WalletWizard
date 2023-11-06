@@ -6,7 +6,7 @@ export default function Navbar() {
     <div id="navigationsleiste" className="text-center">
       <div className="row">
         {/* <div className="col"></div> */}
-        <div className="col">
+        <div className="col tet">
           <a href="#">
             <span id="markenname">Wallet-Wizard</span>
             <p>@MoCa mit Schuss!</p>

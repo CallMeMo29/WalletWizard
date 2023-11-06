@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CustomDropdown.css"; // Import your custom CSS
+import "./CustomDropdown.css";
+import Herbst from "./Herbst"; // Import your custom CSS
 
 const MenuListe = () => {
   const [showDropdown, setShowDropdown] = useState(false); // State to manage dropdown visibility
   const [selectedBackground, setSelectedBackground] = useState("");
   const backgroundClasses = {
-    white: "white-background",
+    Weis: "white-background",
     spring: "spring-background",
     summer: "summer-background",
     autumn: "autumn-background",
     winter: "winter-background",
     Neon: "dark-neon-background",
+    Schneeflocken: "snow",
+    Herbst: ''
     // Add other background options as needed
   };
 
@@ -41,7 +44,7 @@ const MenuListe = () => {
             <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
           </svg>
         </span>
-        <span className="text">MENU</span>
+        <span className="text">Wizard</span>
       </button>
       {showDropdown && (
         <div className="custom-dropdown-menu">
