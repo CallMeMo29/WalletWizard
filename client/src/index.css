@@ -39,18 +39,26 @@
   box-sizing: inherit;
 }
 
-#MenuD {
-  position: absolute;
-  top: 0%;
-  left: 89.5%;
+#navigationsleiste {
+  position: relative; /* Set relative positioning on the navbar */
+  padding: 1% 2%; /* Add padding for spacing */
 }
 
-#navigationsleiste {
-  position: relative;
+#MenuD {
+  position: absolute; /* Set absolute positioning */
+  top: 5px; /* Align to the top of the relative parent */
+  right: 0; /* Align to the right of the relative parent */
+  left: auto;
+  width: 192px;
 }
+
+/* Optional styles for the dropdown */
 .custom-dropdown {
   position: relative;
+  height: inherit;
 }
+
+/* Add media queries for responsiveness if needed */
 
 li {
   list-style: none;
@@ -134,19 +142,19 @@ a {
   justify-content: flex-end;
 }
 
-[class$='-eingabe-gruppe'] {
+[class$="-eingabe-gruppe"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 1rem 0;
 }
-*/ [class$='-eingabe-gruppe'] > label,
-[class$='-eingabe-gruppe'] > input {
+*/ [class$="-eingabe-gruppe"] > label,
+[class$="-eingabe-gruppe"] > input {
   line-height: 2.5rem;
   border: 0.1rem solid #ced4da;
 }
 
-[class$='-eingabe-gruppe'] > label {
+[class$="-eingabe-gruppe"] > label {
   width: 8.2rem;
   padding: 0.5rem 1.8rem 0.5rem 2rem;
   background-color: #e9ecef;
@@ -155,19 +163,19 @@ a {
   cursor: text;
 }
 
-[class$='-eingabe-gruppe'] > :first-child {
+[class$="-eingabe-gruppe"] > :first-child {
   border-right: none;
   border-top-left-radius: 0.2rem;
   border-bottom-left-radius: 0.2rem;
 }
 
-[class$='-eingabe-gruppe'] > :last-child {
+[class$="-eingabe-gruppe"] > :last-child {
   border-left: none;
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;
 }
 
-[class$='-eingabe-gruppe'] > input {
+[class$="-eingabe-gruppe"] > input {
   padding: 0.375rem 0.75rem;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -209,22 +217,22 @@ a {
   cursor: pointer;
 }
 
-.titel-typ-eingabe-gruppe > input[type='radio'] {
+.titel-typ-eingabe-gruppe > input[type="radio"] {
   display: none;
 }
 
-.titel-typ-eingabe-gruppe > input[type='radio']:checked + label {
+.titel-typ-eingabe-gruppe > input[type="radio"]:checked + label {
   color: #fff;
   z-index: 1;
 }
 
-.titel-typ-eingabe-gruppe > input[type='radio']:nth-of-type(2):checked + label {
+.titel-typ-eingabe-gruppe > input[type="radio"]:nth-of-type(2):checked + label {
   background-color: #28a745;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
 }
 
-.titel-typ-eingabe-gruppe > input[type='radio']:nth-of-type(3):checked + label {
+.titel-typ-eingabe-gruppe > input[type="radio"]:nth-of-type(3):checked + label {
   background-color: #dc3545;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
@@ -475,7 +483,7 @@ button.standard:focus {
   background-position: 0 0, 10px 10px;
 }
 
-.autumn-background {
+.dark-background {
   width: 100%;
   height: 100%;
   /* Add your background pattern here */
@@ -507,7 +515,7 @@ button.standard:focus {
   background-size: calc(2 * var(--s)) calc(2 * var(--s));
 }
 
-.white-background {
+.WB-background {
   width: 100%;
   height: 100%;
   --bg: linear-gradient(
@@ -539,7 +547,7 @@ button.standard:focus {
   box-shadow: inset 0px 0px 500px rgb(15, 15, 15);
 }
 .white-background::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 150%;
   box-shadow: 0px -100px 500px black, inset 0px 100px 500px rgb(15, 15, 15);
@@ -554,8 +562,8 @@ button.standard:focus {
 
 .snow {
   background-color: #797a7b !important;
-  background-image: url('http://i.imgur.com/8zsjgyF.png'),
-    url('http://i.imgur.com/wC1HUtA.png'), url('http://i.imgur.com/j5ekn4f.png');
+  background-image: url("http://i.imgur.com/8zsjgyF.png"),
+    url("http://i.imgur.com/wC1HUtA.png"), url("http://i.imgur.com/j5ekn4f.png");
   -webkit-animation: schnee 25s linear infinite;
   -moz-animation: schnee 25s linear infinite;
   -ms-animation: schnee 25s linear infinite;
@@ -665,14 +673,22 @@ button.standard:focus {
 /* Add styles for other backgrounds as needed */
 /* Dark Neon Background */
 .dark-neon-background {
-  background: linear-gradient(
-    to right,
-    #ff6b6b,
-    #9d65c9,
-    #3e8f5b,
-    #ff3e3e,
-    #9c27b0
-  );
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(45deg, #f06, #09f, #f06, #09f);
+  background-size: 400% 400%;
+  animation: gradient 20s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
 }
 
 /* Custom button styles for each background mode */
@@ -686,6 +702,64 @@ button.standard:focus {
   color: #000;
 }
 
+.cloud-background {
+  @import url: ("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
+  background-image: url("https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg");
+  background-size: cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+
+  @-webkit-keyframes slidein {
+    from {
+      background-position: top;
+      background-size: 3000px;
+    }
+    to {
+      background-position: -100px 0px;
+      background-size: 2750px;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      background-position: top;
+      background-size: 3000px;
+    }
+    to {
+      background-position: -100px 0px;
+      background-size: 2750px;
+    }
+  }
+
+  .cloud-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(75, 75, 250, 0.3);
+    border-radius: 3px;
+  }
+  .cloud-background h1 {
+    text-align: center;
+    color: white;
+    font-family: "Source Code Pro", monospace;
+    text-transform: uppercase;
+  }
+}
 /* Add your background pattern here */
 
 /* Add styles for other buttons as needed */
@@ -694,6 +768,7 @@ button.standard:focus {
 .btn {
   width: 180px;
   height: 50px;
+  margin: 0;
   margin-right: 10%;
   margin-top: 0.5%;
   margin-left: -3%;
@@ -701,9 +776,10 @@ button.standard:focus {
   border: none;
   transition: all 0.5s ease-in-out;
   font-size: 18px;
-  font-family: 'Agbalumo', sans-serif;
+  font-family: "Agbalumo", sans-serif;
   font-weight: 600;
   display: flex;
+  justify-content: center;
   align-items: center;
   background: #565f64;
   color: #f5f5f5;
@@ -758,4 +834,14 @@ button {
   z-index: 1;
   font-family: inherit;
   font-weight: 500;
+}
+
+.herbst {
+  position: relative;
+  width: 0%;
+  height: 150vh;
+  /* background: radial-gradient(#333, #000); */
+  /* overflow: hidden;
+  display: flex; */
+  justify-content: center;
 }

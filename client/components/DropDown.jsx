@@ -1,24 +1,25 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './CustomDropdown.css';
-import Herbst from './Herbst'; // Import the Herbst component
+import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./CustomDropdown.css";
+import Herbst from "./Herbst"; // Import the Herbst component
 
 const MenuListe = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   // Initialize selectedBackground state from localStorage or default to ''
   const [selectedBackground, setSelectedBackground] = useState(
-    localStorage.getItem('selectedTheme') || ''
+    localStorage.getItem("selectedTheme") || ""
   );
 
   const backgroundClasses = {
-    Weis: 'white-background',
-    spring: 'spring-background',
-    summer: 'summer-background',
-    autumn: 'autumn-background',
-    winter: 'winter-background',
-    Neon: 'dark-neon-background',
-    Schneeflocken: 'snow',
+    WB: "WB-background",
+    spring: "spring-background",
+    summer: "summer-background",
+    dark: "dark-background",
+    winter: "winter-background",
+    Neon: "dark-neon-background",
+    Schneeflocken: "snow",
+    Clouds: "cloud-background",
     // Add other background options as needed
   };
 
@@ -29,7 +30,7 @@ const MenuListe = () => {
 
   useEffect(() => {
     // Apply the theme when the component mounts
-    const theme = localStorage.getItem('selectedTheme');
+    const theme = localStorage.getItem("selectedTheme");
     if (theme) {
       applyBackground(theme);
     }
@@ -38,7 +39,7 @@ const MenuListe = () => {
   const handleBackgroundChange = (background) => {
     setSelectedBackground(background);
     applyBackground(background);
-    localStorage.setItem('selectedTheme', background); // Save to localStorage
+    localStorage.setItem("selectedTheme", background); // Save to localStorage
     setShowDropdown(false);
   };
 
@@ -46,22 +47,22 @@ const MenuListe = () => {
     if (backgroundClasses[background]) {
       document.body.className = backgroundClasses[background];
     } else {
-      document.body.className = '';
+      document.body.className = "";
     }
   };
 
   return (
-    <div className='custom-dropdown'>
-      <button className='btn' onClick={() => setShowDropdown(!showDropdown)}>
-        {selectedBackground || 'Theme'}
+    <div className="custom-dropdown">
+      <button className="btn" onClick={() => setShowDropdown(!showDropdown)}>
+        {selectedBackground || "Theme"}
       </button>
       {showDropdown && (
-        <div className='custom-dropdown-menu'>
+        <div className="custom-dropdown-menu">
           {Object.keys({ ...backgroundClasses, ...specialComponents }).map(
             (background) => (
               <button
                 key={background}
-                className='btn'
+                className="btn"
                 onClick={() => handleBackgroundChange(background)}
               >
                 {background}
@@ -70,7 +71,7 @@ const MenuListe = () => {
           )}
         </div>
       )}
-      {selectedBackground === 'Herbst' && specialComponents[selectedBackground]}
+      {selectedBackground === "Herbst" && specialComponents[selectedBackground]}
     </div>
   );
 };
