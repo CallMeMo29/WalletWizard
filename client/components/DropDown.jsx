@@ -1,83 +1,77 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CustomDropdown.css";
-import Herbst from "./Herbst"; // Import your custom CSS
+import Herbst from "./Herbst"; // Import the Herbst component
 
 const MenuListe = () => {
-  const [showDropdown, setShowDropdown] = useState(false); // State to manage dropdown visibility
-  const [selectedBackground, setSelectedBackground] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  // Initialize selectedBackground state from localStorage or default to ''
+  const [selectedBackground, setSelectedBackground] = useState(
+    localStorage.getItem("selectedTheme") || ""
+  );
+
   const backgroundClasses = {
-    Weis: "white-background",
+    WB: "WB-background",
     spring: "spring-background",
     summer: "summer-background",
-    autumn: "autumn-background",
+    dark: "dark-background",
     winter: "winter-background",
     Neon: "dark-neon-background",
     Schneeflocken: "snow",
-    Herbst: ''
+    Clouds: "cloud-background",
     // Add other background options as needed
   };
 
-  const handleBackgroundChange = (selectedBackground) => {
-    setSelectedBackground(selectedBackground);
-    applyBackground(selectedBackground);
-    setShowDropdown(false); // Close the dropdown after selecting an option
+  const specialComponents = {
+    Herbst: <Herbst />,
+    // Add other special components here if needed
   };
 
-  // Function to apply the selected background to the body element
-  const applyBackground = (selectedBackground) => {
-    if (backgroundClasses[selectedBackground]) {
-      document.body.className = backgroundClasses[selectedBackground];
+  useEffect(() => {
+    // Apply the theme when the component mounts
+    const theme = localStorage.getItem("selectedTheme");
+    if (theme) {
+      applyBackground(theme);
+    }
+  }, []);
+
+  const handleBackgroundChange = (background) => {
+    setSelectedBackground(background);
+    applyBackground(background);
+    localStorage.setItem("selectedTheme", background); // Save to localStorage
+    setShowDropdown(false);
+  };
+
+  const applyBackground = (background) => {
+    if (backgroundClasses[background]) {
+      document.body.className = backgroundClasses[background];
+    } else {
+      document.body.className = "";
     }
   };
 
   return (
     <div className="custom-dropdown">
-      <button
-        className="btn" // Use the custom button class
-        onClick={() => setShowDropdown(!showDropdown)}
-      >
-        <span className="icon">
-          <svg viewBox="0 0 175 80" width="40" height="40">
-            <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-            <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-            <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-          </svg>
-        </span>
-        <span className="text">Wizard</span>
+      <button className="btn" onClick={() => setShowDropdown(!showDropdown)}>
+        {selectedBackground || "Theme"}
       </button>
       {showDropdown && (
         <div className="custom-dropdown-menu">
-          {Object.keys(backgroundClasses).map((background) => (
-            <button
-              key={background}
-              className="btn" // Use the custom button class
-              onClick={() => handleBackgroundChange(background)}
-            >
-              <span className="icon">
-                <svg viewBox="0 0 175 80" width="40" height="40">
-                  <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                  <rect
-                    y="30"
-                    width="80"
-                    height="15"
-                    fill="#f0f0f0"
-                    rx="10"
-                  ></rect>
-                  <rect
-                    y="60"
-                    width="80"
-                    height="15"
-                    fill="#f0f0f0"
-                    rx="10"
-                  ></rect>
-                </svg>
-              </span>
-              <span className="text">{background}</span>
-            </button>
-          ))}
+          {Object.keys({ ...backgroundClasses, ...specialComponents }).map(
+            (background) => (
+              <button
+                key={background}
+                className="btn"
+                onClick={() => handleBackgroundChange(background)}
+              >
+                {background}
+              </button>
+            )
+          )}
         </div>
       )}
+      {selectedBackground === "Herbst" && specialComponents[selectedBackground]}
     </div>
   );
 };

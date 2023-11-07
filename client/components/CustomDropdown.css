@@ -28,7 +28,7 @@ button2 span {
 }
 
 button2 span::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 8%;
