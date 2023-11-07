@@ -12,7 +12,7 @@ export default function Navbar() {
             <p>@MoCa mit Schuss!</p>
           </a>
         </div>
-        <div id="MenuD" className="col">
+        <div id="MenuD">
           <MenuListe />
         </div>
       </div>
