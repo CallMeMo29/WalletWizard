@@ -42,6 +42,7 @@
 #MenuD {
   position: absolute;
   top: 0%;
+  right: 0%;
   left: 89.5%;
 }
 
@@ -67,6 +68,15 @@ a {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.container {
+  background-image: linear-gradient(
+    0deg,
+    #2f272f 0%,
+    #3f4e50 50%,
+    #73787a 100%
+  );
 }
 
 .App {
@@ -439,6 +449,16 @@ button.standard:focus {
   );
 }
 
+.footerIcons {
+  width: 50px;
+  position: relative;
+  padding: 1%;  
+}
+
+.col {
+  padding-right: 0;
+}
+
 .ausgabe {
   color: red;
 }
@@ -758,4 +778,13 @@ button {
   z-index: 1;
   font-family: inherit;
   font-weight: 500;
+}
+
+.container-fluid {
+  background-image: linear-gradient(
+    0deg,
+    #2f272f 0%,
+    #3f4e50 50%,
+    #73787a 100%
+  );
 }
