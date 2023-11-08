@@ -23,7 +23,7 @@ export default function Footer() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="facebook.com"
               role="button"
             >
               <MDBIcon fab icon="facebook-f" />
@@ -34,7 +34,7 @@ export default function Footer() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="twitter.com"
               role="button"
             >
               <MDBIcon fab icon="twitter" />
@@ -45,7 +45,7 @@ export default function Footer() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="https://walletwizzard.netlify.app/"
               role="button"
             >
               <MDBIcon fab icon="google" />
@@ -55,7 +55,7 @@ export default function Footer() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="instagram.com"
               role="button"
             >
               <MDBIcon fab icon="instagram" />
@@ -66,7 +66,7 @@ export default function Footer() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="linkedin.com"
               role="button"
             >
               <MDBIcon fab icon="linkedin-in" />
@@ -77,7 +77,7 @@ export default function Footer() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="github.com/CallMeMo29/WalletWizard.git"
               role="button"
             >
               <MDBIcon fab icon="github" />
@@ -90,9 +90,9 @@ export default function Footer() {
         className="text-center p-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a className="text-white" href="https://mdbootstrap.com/">
-          MDBootstrap.com
+          @MoCa mit Schuss!
         </a>
       </div>
     </MDBFooter>
