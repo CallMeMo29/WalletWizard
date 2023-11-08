@@ -46,14 +46,10 @@
 
 #MenuD {
   position: absolute; /* Set absolute positioning */
-  top: 5px; /* Align to the top of the relative parent */
-  right: 0; /* Align to the right of the relative parent */
+  top: 10px; /* Align to the top of the relative parent */
+  right: auto;
   left: auto;
   width: 192px;
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  left: 89.5%;
 }
 
 /* Optional styles for the dropdown */
@@ -556,7 +552,7 @@ button.standard:focus {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: inset 0px 0px 500px rgb(15, 15, 15);
 }
 .white-background::before {
@@ -689,7 +685,7 @@ button.standard:focus {
   width: 100%;
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: linear-gradient(45deg, #f06, #09f, #f06, #09f);
   background-size: 400% 400%;
   animation: gradient 20s linear infinite;
@@ -779,12 +775,7 @@ button.standard:focus {
 /* Menu Button Css */
 
 .btn {
-  width: 180px;
-  height: 50px;
   margin: 0;
-  margin-right: 10%;
-  margin-top: 0.5%;
-  margin-left: -3%;
   border-radius: 5px;
   border: none;
   transition: all 0.5s ease-in-out;
@@ -833,7 +824,7 @@ button.standard:focus {
   transform: scale(0.85);
 }
 
-button {
+/* button {
   border: none;
   display: block;
   position: relative;
@@ -847,7 +838,7 @@ button {
   z-index: 1;
   font-family: inherit;
   font-weight: 500;
-}
+} */
 
 .herbst {
   position: relative;
@@ -859,7 +850,7 @@ button {
   justify-content: center;
 }
 
-.footerIcons {
+/* .footerIcons {
   width: 50px;
   padding: 2%;
-}
+} */

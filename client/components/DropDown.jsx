@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CustomDropdown.css";
 import Herbst from "./Herbst"; // Import the Herbst component
 
 const MenuListe = () => {

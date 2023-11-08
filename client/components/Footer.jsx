@@ -1,22 +1,100 @@
-import React from "react"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBIcon,
+  MDBBtn,
+} from "mdb-react-ui-kit";
 
-export default function Footer() {     
-    return (    
-        <footer id="footer1" className="col">
-            <div className="col">
-                <a href="https://www.instagram.com/" target="blank">
-                    <img className="footerIcons" src="./Public/FooterImg/insta.png" />
-                </a>    
-                <a href="https://de-de.facebook.com/" target="blank">
-                    <img className="footerIcons" src="./Public/FooterImg/face.png" />
-                </a>
-                <a href="https://de.linkedin.com/" target="blank">
-                    <img className="footerIcons" src="./Public/FooterImg/linked.png" />
-                </a>                
-            </div>
+export default function Footer() {
+  return (
+    <MDBFooter className="bg-dark text-center text-white">
+      <MDBContainer className="p-4 pb-0">
+        <section className="d-flex justify-content-center">
+          <MDBRow>
+            <MDBBtn
+              outline
+              color="light"
+              floating
+              className="m-1"
+              href="#!"
+              role="button"
+            >
+              <MDBIcon fab icon="facebook-f" />
+            </MDBBtn>
 
-        </footer>  
-    );
+            <MDBBtn
+              outline
+              color="light"
+              floating
+              className="m-1"
+              href="#!"
+              role="button"
+            >
+              <MDBIcon fab icon="twitter" />
+            </MDBBtn>
+
+            <MDBBtn
+              outline
+              color="light"
+              floating
+              className="m-1"
+              href="#!"
+              role="button"
+            >
+              <MDBIcon fab icon="google" />
+            </MDBBtn>
+            <MDBBtn
+              outline
+              color="light"
+              floating
+              className="m-1"
+              href="#!"
+              role="button"
+            >
+              <MDBIcon fab icon="instagram" />
+            </MDBBtn>
+
+            <MDBBtn
+              outline
+              color="light"
+              floating
+              className="m-1"
+              href="#!"
+              role="button"
+            >
+              <MDBIcon fab icon="linkedin-in" />
+            </MDBBtn>
+
+            <MDBBtn
+              outline
+              color="light"
+              floating
+              className="m-1"
+              href="#!"
+              role="button"
+            >
+              <MDBIcon fab icon="github" />
+            </MDBBtn>
+          </MDBRow>
+        </section>
+      </MDBContainer>
+
+      <div
+        className="text-center p-3"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+      >
+        © 2020 Copyright:
+        <a className="text-white" href="https://mdbootstrap.com/">
+          MDBootstrap.com
+        </a>
+      </div>
+    </MDBFooter>
+  );
 }
